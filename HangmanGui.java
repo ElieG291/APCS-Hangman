@@ -216,7 +216,27 @@ public class HangmanGui extends JFrame {
 		BufferedImage img = null;
 		// TODO Elie choose image based on num lives left
 		try {
-			img = ImageIO.read(new URL("https://upload.wikimedia.org/wikipedia/commons/8/8b/Hangman-0.png"));
+			img = ImageIO.read(new URL(getGallowsFilename(lives)));
+	private String getGallowsFilename(int numLives){
+                String result = "https://upload.wikimedia.org/wikipedia/commons/8/8b/Hangman-0.png";
+		if (lives == 0){
+                       filename = "https://commons.wikimedia.org/wiki/File:Hangman-6.png";
+                         }
+                    else if  (lives == 1){
+			      filename = "https://commons.wikimedia.org/wiki/File:Hangman-1.png";
+	            else if  (lives == 2){
+			      filename = "https://commons.wikimedia.org/wiki/File:Hangman-2.png";
+		    else if  (lives == 3){
+			      filename = "https://commons.wikimedia.org/wiki/File:Hangman-3.png";
+	            else if  (lives == 4){
+			      filename = "https://commons.wikimedia.org/wiki/File:Hangman-4.png";
+		    else if  (lives == 5){
+			      filename = "https://commons.wikimedia.org/wiki/File:Hangman-5.png";
+	            else if  (lives == 6){
+			      filename = "https://commons.wikimedia.org/wiki/File:Hangman-6.png";
+			    else{
+                                filename = "https://upload.wikimedia.org/wikipedia/commons/8/8b/Hangman-0.png";
+                          }
 		} catch (MalformedURLException e) {
 			System.out.println("Error: bad URL requested");
 			System.out.println(e.getMessage());
